@@ -1,0 +1,15 @@
+.card-title{
+    color: black;
+}
+.trow{
+    border-bottom: none;
+}
+.cijena{
+    color: black;
+    border-bottom: none;
+    vertical-align: middle;
+    font-weight: normal;
+}
+@media screen and (max-width: 768px) {
+
+  }

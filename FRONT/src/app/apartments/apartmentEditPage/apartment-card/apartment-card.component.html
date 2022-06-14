@@ -1,0 +1,61 @@
+<div class="bg-white kartica2 .myDivToPrint" >
+    <div class="card-img-wrapper dimenzije">
+        <img src="{{apartment.photos[0]?.url}}" onerror="this.src='assets/NoImage.png'" class="dimenzije">
+
+    </div>
+
+    <form [formGroup]="apartmentForm"  (submit)="updateApartment()" autocomplete="off">
+    <div class="main-content">
+        <div class="container-fluid bg-white">
+            <div class="row bg-white">
+                <div class="col-md-12 bg-white KART">
+                    <div class="card bg-white">
+                        <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6 form-group">
+                                        <mat-form-field [style.width.%]=100>
+                                            <input matInput  placeholder="Mjesečna stanarina" formControlName="monthlyPrice" required>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <mat-form-field [style.width.%]=100>
+                                          <input   placeholder="Broj soba" matInput  formControlName="numberOfRooms" required>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 form-group">
+                                      <mat-form-field [style.width.%]=100>
+                                        <input matInput placeholder="Opis stana"formControlName="apartmentDescription"  required>
+                                      </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    
+
+
+
+ 
+    
+    <div >
+        <button class="btn" mat-raised-button color="primary" type="submit">Uredi</button>
+        <button class="btn" mat-raised-button color="primary" type="button" style="margin-left: 5px" (click)="adressToggle()" *ngIf="!apartment.adress?.length">Dodaj Adresu</button>
+    </div>
+    <div >    
+        <button class="btn" mat-raised-button color="primary" type="button"  (click)="openDialog(apartment)">Postavi sliku</button>
+        <button class="btn" mat-raised-button color="primary" (click)="printPage()" type="button" style="margin-left: 5px;margin-top:5px"> Print</button>
+    </div>
+    </form> 
+    <div *ngIf="AdressShow" class="container adressCard">
+                <app-adding-adress [apartment]="apartment" (cancelAddress)="cancelAddressMode($event)"></app-adding-adress>
+            
+    </div>
+

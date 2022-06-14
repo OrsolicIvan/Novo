@@ -1,0 +1,17 @@
+<div class="main-content pocetni" >
+<div class="row">
+    <div class="card" *ngFor="let new of news" >
+    
+    
+      <h4 class="card-title">{{new.title}}</h4>
+      <img
+      src="{{new.urlToImage}}"
+      class="card-img-top"
+      alt="..."
+    />
+      <h5>
+        {{new.description}}
+      </h5>
+    </div>
+  </div>
+</div>

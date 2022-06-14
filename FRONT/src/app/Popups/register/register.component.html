@@ -1,0 +1,21 @@
+<form #registerForm="ngForm" (ngSubmit) = "register()" autocomplete="off" class="register-form">
+    <h2 >Prijavljujete se kao korisnik</h2>
+    <div class="form-group">
+        <mat-form-field>
+            <input placeholder="Korisničko ime" matInput type="text"  name="username"
+             [(ngModel)]="model.username" >
+        </mat-form-field>
+    </div>
+    
+    <div class="form-group">
+        <mat-form-field >
+            <input matInput placeholder="Lozinka" type="password"  name="password"
+             [(ngModel)]="model.password" >
+        </mat-form-field>
+        
+    </div>
+    <div class="form-group text-center">
+        <button class="btn btn-success mr-2" type="submit">Registrirajte se</button>
+        <button class="btn btn-danger mr-2" (click) ="cancel()" type="button">Odustani</button>
+    </div>
+</form>

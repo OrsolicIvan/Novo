@@ -1,0 +1,71 @@
+.kartica3{
+
+    font-size:110%;
+    
+    
+    margin-left: auto;
+    margin-right:0 auto;
+    border-radius:15px;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    height: 200%;
+    color: rgb(0, 0, 0);
+    word-wrap: break-all;
+    
+}
+
+.slikta{
+    height: 100%;
+    width: 100%;
+    
+    border-radius: 1px;
+    box-shadow: 0px 5px 5px #ccc;
+    -moz-border-radius:25px;
+    -webkit-border-radius:15px;
+}
+.card-img-wrapper{
+    margin:none;
+    justify-content: space-around;
+}
+.table{
+    font-weight: 1px;
+    color:black;
+    border:none;
+
+    table-layout: fixed;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.desni{
+    border: none ;
+    word-wrap: break-word
+  
+}
+.lijevi{
+    border: none;
+    word-wrap: break-all;
+    width: 400px;
+  
+} 
+.buttonic{
+    align-items: center;
+    width:100%;
+    
+}
+.button{
+    width:50%;
+    margin-left:25%;
+    margin-right:25%;   
+}
+.karticaBody{
+    align-items: center;
+    
+}
+.card-body,.forma{
+    width:100%;
+}
+.font{
+    font-weight: normal;
+}

@@ -1,0 +1,30 @@
+<!-- Default form contact -->
+<div class="gor">
+<form class="text-center border border-light p-5 bg-white">
+    <p class="h4 mb-4">Kontaktirajte nas</p>
+    <!-- Name -->
+    <input type="text" formControlName="contactFormName" id="defaultContactFormName" mdbInput
+      class="form-control mb-4" placeholder="Ime">
+    <!-- Email -->
+    <input type="email" formControlName="contactFormEmail" id="defaultContactFormEmail" mdbInput
+      class="form-control mb-4" placeholder="E-mail">
+    <!-- Subject -->
+    <label>Tema</label>
+    <select formControlName="contactFormSubjects" class="browser-default custom-select mb-4">
+      <option value="" disabled>Izaberi</option>
+      <option value="1" selected>Podrška</option>
+      <option value="2">Prijavi grešku</option>
+      <option value="3">Podnesi zahtjev</option>
+    </select>
+    <!-- Message -->
+    <div class="form-group">
+      <textarea formControlName="contactFormMessage" class="form-control rounded-0" mdbInput id="exampleFormControlTextarea2"
+        rows="3" placeholder="Poruka"></textarea>
+    </div>
+    <!-- Copy -->
+    <!-- Send button -->
+    <button mat-raised-button color="primary" outline="true" block="true" class="z-depth-0 my-4 waves-effect"
+      mdbWavesEffect type="submit" (click)="onSubmit()">Pošalji</button>
+  </form>
+  <!-- Default form contact -->
+  </div>

@@ -1,0 +1,43 @@
+
+    <div class="fontic main-content">
+        <form class="forma" #form="ngForm"  (submit)="onSubmit(form)" autocomplete="off">
+                        <div class="card bg-white">
+                            <div class="card-body">
+                                
+                                    <div class="row">
+                                        <div class="col-md-6 form-group">
+                                            <mat-form-field [style.width.%]=100>
+                                                <input input matInput type="number" placeholder="Broj soba"
+                                                name="numberOfRooms" #numberOfRooms="ngModel" [(ngModel)]="memberService.apformData.numberOfRooms" required>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-6 form-group">
+                                            <mat-form-field [style.width.%]=100>
+                                            <input  type="number" placeholder="Mjesečna stanarina" matInput  name="monthlyPrice" #monthlyPrice="ngModel"[(ngModel)]="memberService.apformData.monthlyPrice" required>
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 form-group">
+                                            <mat-form-field [style.width.%]=100>
+                                                <input input matInput type="text" placeholder="Opis stana"
+                                                name="apartmentDescription" #apartmentDescription="ngModel" [(ngModel)]="memberService.apformData.apartmentDescription" required>
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div class="form-group text-center">
+                                        <button class="btn btn-success mr-2" type="submit" [disabled]="form.invalid">Unesi</button>
+                                        <button class="btn btn-danger  mr-2" (click)="bsModalRef.hide()" type="button">Odustani</button>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                
+                                
+                            </div>
+                        </div>
+    </form>
+</div>
+
+
+
+
+

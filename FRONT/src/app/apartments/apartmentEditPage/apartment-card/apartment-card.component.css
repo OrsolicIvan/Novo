@@ -1,0 +1,52 @@
+::ng-deep .mat-form-field-label {
+    /*change color of label*/
+    color: black !important;
+   }
+  
+   ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: black !important;
+  } 
+::ng-deep .mat-form-field-value{
+    color: black    !important;
+}
+::ng-deep .mat-form-field-input{
+    color: black !important;
+}
+:ng-deep .mat-input-element::placeholder{
+    color: black
+}
+.main-content{
+    color: black
+}
+.card{
+    border: none;
+    
+}
+
+::ng-deep .mat-input-wrapper{
+    width:400px !important;
+  }
+.kartica2{
+    margin-top: 10%;
+}
+@media print {
+    .myDivToPrint {
+        background-color: white;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin: 0;
+        padding: 15px;
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .btn{
+        
+        font-size: 10px;
+    }
+  }

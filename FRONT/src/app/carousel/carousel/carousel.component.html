@@ -1,0 +1,34 @@
+ <ngb-carousel
+ [showNavigationArrows]="true" 
+ [showNavigationIndicators]="true"
+ interval="8000"
+ [keyboard]="true"
+ [activeId]="'secondSlide'"
+ >
+    <ng-template ngbSlide id="firstSlide">
+      <div >
+        <img src="assets/stan1.jpg" alt="Angular Carousel 1">
+      </div>
+    </ng-template>
+    <ng-template ngbSlide id="secondSlide">
+      <div >
+        <img src="assets/stan2.jpg" alt="Angular Carousel 2">
+      </div>
+    </ng-template>
+	<ng-template ngbSlide id="thirdSlide">
+		<div>
+		  <img src="assets/stan3.jpg" alt="Angular Carousel 3">
+		</div>
+	  </ng-template>
+	  <ng-template ngbSlide id="fourthSlide">
+		<div >
+		  <img src="assets/stan4.jpg" alt="Angular Carousel 4">
+		</div>
+	  </ng-template>
+	  <ng-template ngbSlide id="fifthSlide">
+		<div>
+		  <img src="assets/stan5.jpg" alt="Angular Carousel 5">
+		</div>
+	  </ng-template>
+  </ngb-carousel>
+  

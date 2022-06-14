@@ -1,0 +1,17 @@
+@media screen and (max-width: 768px) {
+    .kartica2{
+        width:120%
+    }
+    .apCard{
+        margin-top: 10px;margin-left:0%;margin-right:0%;
+        width:100%
+    }
+
+    
+  }
+  .apCard{
+    margin-top: 10px;margin-left:10%;margin-right:10%
+  }
+  .row{
+      margin-left:0px;margin-right:0px
+  }

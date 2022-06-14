@@ -1,0 +1,75 @@
+.razmak,.carosel{
+    padding-top: 50px;
+}
+.tablica{
+    color:rgb(0, 0, 0);
+    width:100%;
+    background-color:rgb(255, 255, 255);
+}
+.slika{
+    
+    height: 100%;
+    justify-content: center;
+}
+.row{
+    
+    width: 100%;
+}
+.kockica1{
+    background-image:url("/assets/novo1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width: 50%;
+    height: 300px;
+
+}
+.kockica2{
+    background-image:url("/assets/novo2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width: 50%;
+    height: 300px;
+
+}
+.kockica3{
+    background-image:url("/assets/novo3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width: 50%;
+    height: 300px;
+
+}
+.tablicaD{
+    margin-top:25px;
+}
+
+header nav {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .kockica1,.kockica2,.kockica3,.carosel{
+    display: none;
+  }
+  .razmak{
+      padding-top:100px;
+      width: 100%;
+      margin-left:none
+  }
+  .tekst{
+      font-size: smaller;
+  }
+  .h1{font-size: medium;}
+
+}
+@media screen and (orientation: landscape) {
+  header nav {
+    position: fixed;
+    left: 0;
+    width: 20vw;
+  }
+
+}

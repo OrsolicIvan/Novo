@@ -1,0 +1,22 @@
+.gumb1,gumb2{
+    display: inline;
+}
+.dugme{
+    margin-left: 10px;
+}
+.table{
+    color: black;
+ 
+}
+.y{
+    border:none;
+    padding: 0;
+    font-weight: normal;
+}
+@media screen and (max-width: 768px) {
+    .y{
+        font-size: small;
+    }
+    .dugme{margin-top:5px}
+    }
+  

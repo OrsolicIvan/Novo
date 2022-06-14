@@ -1,0 +1,23 @@
+<div  class='home1' *ngIf="(accountService.currentUser$ | async) === null" >
+    <div class="col-5 bg-secondary home1" *ngIf="registerShow" >  
+        <div class="naslov">
+            Izaberite način na koji se želite registrirati
+            <button (click)="registerToggle()" class="btn btn-primary btn-lg mr-2">Korisnik</button>
+            <button (click)="registerToggle2()" class="btn btn-primary btn-lg mr-2">Stanodavac</button>
+        </div>
+    </div>
+    <div *ngIf="registerMode" class="container">
+        <div class="row justify-content-center">
+            <div class="col-6 bg-white register1">
+                <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="registerMode2" class="container">
+        <div class="row justify-content-center">
+            <div class="col-6 bg-white register2">
+                <app-register2 (cancelRegister)="cancelRegisterMode2($event)"></app-register2>
+            </div>
+        </div>
+    </div>
+</div>

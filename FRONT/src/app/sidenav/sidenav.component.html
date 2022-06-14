@@ -1,0 +1,58 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar><img src='assets/Home.png' class="homeslika nav-item-home" routerLink='/'></mat-toolbar>
+    
+    <mat-nav-list>
+      <a mat-list-item *appHasRole='["Member"]'class="nav-link" routerLink='/members' routerLinkActive="active">STANOVI</a>
+      <a mat-list-item *appHasRole='["Moderator"]'routerLink='/apEdit' routerLinkActive="active">UREĐIVANJE STANOVA</a>
+      <a mat-list-item *appHasRole='["Moderator"]' class="nav-link" (click)="openApCreateModal()" >DODAJTE NOVI STAN</a>
+      <a mat-list-item *appHasRole='["Admin"]'class="nav-link" routerLink='/admin' routerLinkActive="active">ADMIN PANEL</a>
+      <a mat-list-item *appHasRole='["Member"]'class="nav-link" routerLink='/myapartments' routerLinkActive="active">MOJI STANOVI</a>
+      <a mat-list-item class="nav-link" routerLink='/news' routerLinkActive="active">NOVOSTI</a>
+      <a mat-list-item class="nav-link"  *ngIf="(accountService.currentUser$ | async) === null" (click)="btnClick()">REGISTER</a>
+      <a mat-list-item class="nav-link" (click)="logout()" *ngIf="accountService.currentUser$ | async">LOGOUT</a>
+      
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <div >
+        <form *ngIf="(accountService.currentUser$ | async) == null" #loginForm="ngForm" class="form mt-2 mt-md-0" (ngSubmit)="login()" autocomplete="off">
+          <div class="column">
+          <mat-form-field class="matFormField">
+          <input matInput 
+          name="username"[(ngModel)]="model.username" 
+          
+          type="text" 
+          placeholder="Korisničko ime">
+        </mat-form-field>
+        <mat-form-field class="matFormField">
+          <input matInput
+          name="password"
+          [(ngModel)]="model.password" 
+          type="password" 
+          placeholder="Lozinka">
+        </mat-form-field>
+          <button class="btn btn-primary my-2 my-sm-0 " type="submit">Prijava</button>
+          <button class="btn btn-primary my-2 my-sm-0" type="button" name="btn" (click)="btnClick();" *ngIf="(accountService.currentUser$ | async) === null">Registracija</button>
+        </div>
+        </form>
+      </div>
+    </mat-toolbar>
+    <div class="app col-lg-12 "  >
+      
+      <router-outlet></router-outlet>
+  </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

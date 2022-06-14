@@ -1,0 +1,32 @@
+
+<div class=" fontic card kartica3 bg-white">
+    <div class="card-img-wrapper">
+        <img src="{{apartment.photos[0]?.url}}" onerror="this.src='assets/NoImage.png'" class="slikta">
+    </div>
+    
+        <div class="card-body">
+            
+              
+            <p class=" card-title text-center mb-1">Cijena: {{apartment.monthlyPrice}} KM 
+            </p>
+            <p class=" card-title text-center mb-1">Broj soba:
+                {{apartment.numberOfRooms}} 
+            </p>
+            <p class=" card-title text-center mb-1">Opis stana:
+                {{apartment.apartmentDescription}} 
+            </p>      
+            <div class="buttonic"><button mat-raised-button color="primary" (click)="onSubmit()" class="button">IZNAJMI</button> </div>
+
+    
+    </div>
+    <div class="card-body p-2" *ngIf="comments.length!=0">
+        <table class="table">
+            <tbody>
+                <th class="font">Dojmovi o stanu</th>
+                <th class="font">Dojmovi o stanodavcu</th>
+                <tr *ngFor="let comment of comments" ><td class="lijevi">{{comment.apartmentComment}}</td><td class="desni">{{comment.ownerComment}}</td> </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+

@@ -1,0 +1,27 @@
+
+<div class="card kartica bg-white ">
+    <div class="card-img-wrapper">
+        <img src="{{apartment.photos[0]?.url}}" onerror="this.src='assets/NoImage.png'" class="slikta">
+    </div>
+    <div class="card-body p-2 ">
+        <table class="table">
+            <tbody>
+                <tr class="trow">
+                    <td class="cijena fontic">
+                       Cijena: {{apartment.monthlyPrice}}KM
+                    </td>
+                    <td class="cijena" *ngIf="apartment.adress[0]?.city != '' && apartment.adress[0]?.city != null">
+                        Grad: {{apartment.adress[0]?.city}}
+                    </td>
+                </tr>
+                <tr class="trow">
+                     
+                    <td colspan="2">
+                        <button mat-raised-button  (click)="openModal(apartment)" color="primary"  >POGLEDAJ</button>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

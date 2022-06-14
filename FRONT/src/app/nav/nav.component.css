@@ -1,0 +1,50 @@
+.dropdown-toggle, .dropdown-item {
+    cursor: pointer;
+}
+::ng-deep .mat-form-field-label {
+    /*change color of label*/
+    color: rgb(255, 255, 255) !important;
+   }
+  
+::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: rgb(255, 255, 255) !important;
+    } 
+::ng-deep .mat-form-field-value{
+    color: rgb(255, 255, 255)    !important;
+}
+::ng-deep .mat-form-field-input{
+    color: rgb(255, 255, 255) !important;
+}
+:ng-deep .mat-input-element::placeholder{
+    color: rgb(255, 255, 255)
+}
+.matFormField{
+    margin-left: 10px;
+}
+@media screen and (max-width: 768px) {
+    .matFormField{
+        margin-left: 2px;
+        width:20vw;
+        height:10vh;
+        display: inline-block;
+        font-size: smaller;
+    }
+    .btn{
+        width:25vw;
+        height: 5vh;
+        font-size: smaller;
+    }
+    .navbar{
+        height:55px
+    }
+    .homeslika{
+        display: none;
+    }
+    .nav-item{
+        font-size: smaller;
+    }
+}
+@media screen and (max-height: 400px){
+    .btn{height:9vh}
+}

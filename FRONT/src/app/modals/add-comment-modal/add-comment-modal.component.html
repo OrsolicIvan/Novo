@@ -1,0 +1,22 @@
+<form #form="ngForm"  (submit)="onSubmit(form)" autocomplete="off">
+    <div class="fontic card kartica3 bg-white">
+        <div class="card-body">
+            <div class="commentField">
+                <mat-form-field class="full">
+                    <input matInput type="text" placeholder="Dojam o stanu"
+                    id="apartmentComment" name="apartmentComment" #apartmentComment="ngModel" [(ngModel)]="memberService.comformData.apartmentComment" required>
+                </mat-form-field>
+            </div>
+            
+            <div class="commentField">
+                <mat-form-field class="full">
+                    <input matInput type="text" placeholder="Dojam o stanodavcu"
+                        id="ownerComment" name="ownerComment" #ownerComment="ngModel" [(ngModel)]="memberService.comformData.ownerComment" required>
+                </mat-form-field>
+            </div>
+            
+               <button mat-raised-button color="primary" [disabled]="!form.valid"type="submit" >Ostavite dojam</button>
+               <button mat-raised-button color="danger" type="button" class="dugme" (click)="cancel()">Odustani</button>
+        </div>
+    </div>
+    </form>

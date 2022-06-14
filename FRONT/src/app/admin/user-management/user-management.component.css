@@ -1,0 +1,36 @@
+.marginaTop{
+    margin-top: 10%;
+    
+}
+tbody{
+    background-color: white;   
+    
+}
+.trash{
+    font-size: 30px;
+    vertical-align: middle; 
+    color: red;
+    
+}
+.redic{
+    vertical-align: middle;
+    justify-self: center;
+}
+::ng-deep .mat-form-field-label {
+    /*change color of label*/
+    color: rgb(255, 255, 255) !important;
+   }
+  
+::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: rgb(255, 255, 255) !important;
+    } 
+::ng-deep .mat-form-field-value{
+    color: rgb(255, 255, 255)    !important;
+}
+::ng-deep .mat-form-field-input{
+    color: rgb(255, 255, 255) !important;
+}
+:ng-deep .mat-input-element::placeholder{
+    color: rgb(255, 255, 255)
+}

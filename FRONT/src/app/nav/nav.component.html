@@ -1,0 +1,59 @@
+<nav class="fontic navbar navbar-expand-md navbar-dark fixed-top bg-secondary">
+    
+        
+        <img src='assets/Home.png' class="homeslika nav-item-home" routerLink='/'>
+      <ul class="navbar-nav mr-auto">
+        <ng-container *ngIf="accountService.currentUser$ | async">
+          <li class="nav-item">
+            <a class="nav-link" routerLink='/' routerLinkActive="active" >POČETNA STRANICA</a>
+          </li>
+          <li class="nav-item">
+            <a *appHasRole='["Member"]'class="nav-link" routerLink='/members' routerLinkActive="active">STANOVI</a>
+          </li>
+          <li  *appHasRole='["Moderator"]' class="nav-item">
+            <a class="nav-link" routerLink='/apEdit' routerLinkActive="active">UREĐIVANJE STANOVA</a>
+          </li>
+          <li *appHasRole='["Admin"]' class="nav-item">
+            <a class="nav-link" routerLink='/admin' routerLinkActive="active">ADMIN PANEL</a>
+          </li>
+          <li *appHasRole='["Member"]' class="nav-item">
+            <a class="nav-link" routerLink='/myapartments' routerLinkActive="active">MOJI STANOVI</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink='/news' routerLinkActive="active">NOVOSTI</a>
+          </li>
+        </ng-container>
+      </ul>
+
+      <div class="dropdown" *ngIf="(accountService.currentUser$ | async) as user" dropdown> 
+        <a class="dropdown-toggle text-light"dropdownToggle>DOBRODOŠLI {{user.userName | uppercase}}</a> 
+        <div class="dropdown-menu mt-3" *dropdownMenu>
+          <div class="dropdown divider"></div>
+          <button class="dropdown item dropdownItem"(click)="openApCreateModal()" *appHasRole=' ["Admin", "Moderator"]'>Dodajte stan</button>
+          <button class="dropdown item dropdownItem"(click)="logout()">Odjava</button>
+        </div>
+      </div>
+
+      <form *ngIf="(accountService.currentUser$ | async) === null" #loginForm="ngForm" class="form-inline mt-2 mt-md-0" (ngSubmit)="login()" autocomplete="off">
+        <div class="column">
+        <mat-form-field class="matFormField">
+        <input matInput 
+        name="username"[(ngModel)]="model.username" 
+        
+        type="text" 
+        placeholder="Korisničko ime">
+      </mat-form-field>
+      <mat-form-field class="matFormField">
+        <input matInput
+        name="password"
+        [(ngModel)]="model.password" 
+        type="password" 
+        placeholder="Lozinka">
+      </mat-form-field>
+        <button class="btn btn-primary my-2 my-sm-0 " type="submit">Prijava</button>
+        <button class="btn btn-primary my-2 my-sm-0" type="button" name="btn" (click)="btnClick();" *ngIf="(accountService.currentUser$ | async) === null">Registracija</button>
+      </div>
+      </form>
+      
+    
+  </nav>

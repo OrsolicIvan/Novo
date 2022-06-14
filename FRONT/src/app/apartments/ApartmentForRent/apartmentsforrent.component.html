@@ -1,0 +1,35 @@
+
+<div class="fontic row memberkartica">
+   <div class="filtar bg-white">
+      <div class="rg">
+      <mat-form-field appearance="fill" class="prva">
+         <mat-label>Izaberite filtar za cijenu</mat-label>
+         <mat-select  [(ngModel)]="morePr">
+           <mat-option [value]="true">Više</mat-option>
+           <mat-option [value]="false">Manje</mat-option>
+         </mat-select>
+         
+       </mat-form-field>
+       od
+         <mat-form-field  class="f1"><input matInput  [(ngModel)]="price" type="number"></mat-form-field>
+         
+         <mat-form-field appearance="fill"class="druga">
+            <mat-label>Izaberite filtar za broj soba</mat-label>
+            <mat-select [(ngModel)]="moreRm" >
+              <mat-option [value]="true">Više</mat-option>
+              <mat-option [value]="false">Manje</mat-option>
+            </mat-select>
+          </mat-form-field>
+          od
+         <mat-form-field  class="f1"><input matInput [(ngModel)]="numRooms" type="number"></mat-form-field>
+         <button mat-raised-button (click)="filtriraj()" color="primary" class="gumbic">{{dugme}}</button>
+      </div>
+   </div>
+   <div class="membercard col-3" *ngFor="let apartment of apartments | FFilter:price:morePr:numRooms:moreRm:filt" >
+     
+    <app-member-card [apartment]="apartment"  ></app-member-card>
+   
+     
+     
+   </div>
+</div>

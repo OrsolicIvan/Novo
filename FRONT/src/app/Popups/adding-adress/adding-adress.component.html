@@ -1,0 +1,38 @@
+
+<div class="main-content">
+                        <form #form="ngForm"  (submit)="onSubmit(form)" autocomplete="off">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput type="text" placeholder="Ime grada"
+                                        name="city" #city="ngModel" [(ngModel)]="memberService.formData.city" required>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                      <input  name="streetName" #streetName="ngModel" placeholder="Ime ulice"
+                                      [(ngModel)]="memberService.formData.streetName" required type="text" matInput>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput  placeholder="Broj zgrade" name="buildingNumber" 
+                                        #buildingNumber="ngModel" [(ngModel)]="memberService.formData.buildingNumber" type="number" required>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Broj stana"
+                                    name="apartmentNumber" #apartmentNumber="ngModel" [(ngModel)]="memberService.formData.apartmentNumber" type="number" required>
+                                  </mat-form-field>
+                                </div>
+                            </div>
+                            <button mat-raised-button class="btn btn-success col-md-3"  
+                            type="submit" [disabled]="!form.valid" (click)="onSubmit(form)" >Dodaj adresu</button>
+
+                            <button mat-raised-button class="btn btn-danger col-md-3"  type="button" (click) ="cancel()" type="button">Odustani</button>
+                            <div class="clearfix"></div>
+                        </form>
+  </div>

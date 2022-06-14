@@ -1,0 +1,34 @@
+
+<div class="bg-white kartica2" >
+    <div class="card-img-wrapper dimenzije">
+        <img src="{{apartment.photos[0]?.url}}" onerror="this.src='assets/NoImage.png'" class="dimenzije">
+
+    </div>
+    
+<form  #form="ngForm"  (submit)="onSubmit(form)" autocomplete="off">
+    <table class="table table-hover">
+        
+        <tbody >
+            <tr  >
+                <th scope="row" class="y">Mjesečna stanarina</th>
+                <td style="text-align:center" class="y">{{apartment.monthlyPrice}} KM</td>
+            </tr>
+            <tr  >
+                <th scope="row" class="y">Broj soba</th>
+                <td style="text-align:center" class="y">{{apartment.numberOfRooms}}</td>
+            </tr>
+            <tr  >
+                <th scope="row" class="y">Opis stana</th>
+                <td style="text-align:center" class="y">{{apartment.apartmentDescription}}</td>
+            </tr>
+            
+        </tbody>
+    </table>
+    <div class="card-body p-2 gumb2">
+        <button mat-raised-button color="primary"  type="submit" class="dugme">Otkaži najam</button>
+        <button mat-raised-button color="primary" type="button" class="dugme" (click)="openModalComment(apartment)">Ostavite dojam</button>
+    </div>
+</form>
+</div>
+
+

@@ -1,0 +1,62 @@
+.sidenav-container {
+  height: 100%;
+}
+.homeslika{
+  height:35px;
+  width: 50px;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;  background-color:#ffffff ;border-bottom:1px;
+  justify-content: center;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.active{
+  background: #929292;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+::ng-deep .mat-form-field-label {
+  /*change color of label*/
+  color: rgb(0, 0, 0) !important;
+ }
+
+::ng-deep.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: rgb(0, 0, 0) !important;
+  } 
+::ng-deep .mat-form-field-value{
+  color: rgb(0, 0, 0)    !important;
+}
+::ng-deep .mat-form-field-input{
+  color: rgb(0, 0, 0) !important;
+}
+:ng-deep .mat-input-element::placeholder{
+  color: rgb(0, 0, 0)
+}
+form{
+  margin-left: 110%;
+}
+@media screen and (max-width: 768px) {
+  .form{
+    margin-left:20%;
+    width: 50px;
+  }
+  .mat-form-field{
+    width: 50px;
+    font-size:x-small ;
+  }
+  .btn{
+    height:30px;
+    width: 80px;
+    font-size: x-small;
+  }
+}
